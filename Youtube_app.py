@@ -114,7 +114,7 @@ def get_channel_stats(youtube, channel_ids):
 df = pd.read_csv('channels.csv')
 channel_df = df[['channel_name', 'description','subscribers', 'views', 'total_videos']]
 
-vdf = pd.read_csv("\releases\vdf_edited.csv")
+vdf = pd.read_csv("\releases\video_stats.csv")
 #vdf = vdf.drop(columns = {'index'})
 
 st.subheader("Top channels with highest features")
