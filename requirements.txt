@@ -1,0 +1,12 @@
+streamlit
+isodate
+pandas
+numpy
+seaborn
+transformers 
+evaluate
+time
+datasets
+keras==2.12.0
+tensorflow=2.12.0
+google-api-python-client
