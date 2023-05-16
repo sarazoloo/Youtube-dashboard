@@ -16,3 +16,5 @@
 
 ### The model
   In the second tab of the dashboard you have can input any kind of title and it will give back a predicted number of views you video may likely have.
+
+Link to the streamlit application https://sarazoloo-youtube-dashboard-youtube-app-bhvrso.streamlit.app/
