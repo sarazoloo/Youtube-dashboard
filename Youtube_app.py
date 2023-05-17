@@ -2,7 +2,7 @@ import streamlit as st
 import isodate
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, ColumnsAutoSizeMode
 
-
+import gdown
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -11,6 +11,11 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 #sns.set(style="darkgrid", color_codes=True)
 st.set_page_config(layout="wide",)
+
+
+model_url = 'https://drive.google.com/file/d/1shrUAE97f_B7UrQqFEOmAuI4NewHX0Z2/view?usp=share_link'
+output = 'model.pkl'
+gdown.download(model_url, output, quiet = False)
 
 st.title('Youtube channel statistics dashboard  :tv:')
 
