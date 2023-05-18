@@ -1,4 +1,5 @@
 import streamlit as st
+import googleapiclient.discovery
 import isodate
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, ColumnsAutoSizeMode
 
@@ -11,16 +12,14 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 #sns.set(style="darkgrid", color_codes=True)
 st.set_page_config(layout="wide",)
+vid_data_url = 'https://drive.google.com/file/d/1v1PfJES0TGguMj4B3FwnRj_nso3e4Zi7/view?usp=share_link'
+output_1 = 'video_stats.csv'
+gdown.download(vid_data_url, output_1, quiet = False, fuzzy=True)
 
 
 model_url = 'https://drive.google.com/file/d/1shrUAE97f_B7UrQqFEOmAuI4NewHX0Z2/view?usp=share_link'
-output_1 = 'model.pkl'
-gdown.download(model_url, output_1, quiet = False)
-
-
-vid_data_url = 'https://drive.google.com/file/d/1v1PfJES0TGguMj4B3FwnRj_nso3e4Zi7/view?usp=share_link'
-output_2 = 'video_stats.csv'
-gdown.download(vid_data_url, output_2, quiet = False)
+output_2 = 'model.pkl'
+gdown.download(model_url, output_2, quiet = False, fuzzy=True)
 
 st.title('Youtube channel statistics dashboard  :tv:')
 
@@ -121,12 +120,11 @@ def get_channel_stats(youtube, channel_ids):
 
 #channel_ids = get_channels(youtube)
 #channel_stats = get_channel_stats(youtube, channel_ids)
-
-
 df = pd.read_csv('channels.csv')
 channel_df = df[['channel_name', 'description','subscribers', 'views', 'total_videos']]
-vdf = pd.read_csv('video_stats.csv')
 
+vdf = pd.read_csv('video_stats.csv')
+#vdf = vdf.drop(columns = {'index'})
 
 st.subheader("Top channels with highest features")
 
@@ -162,6 +160,8 @@ with col3:
     top10_engagement = top10_engagement[['channel_name', 'title', 'views', 'likes','engagement']]
     st.dataframe(top10_engagement.reset_index(drop=True))
 
+
+st.subheader("")
 
 
 
