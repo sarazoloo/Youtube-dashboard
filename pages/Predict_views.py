@@ -17,7 +17,7 @@ from datasets import load_dataset
 import keras
 import tensorflow as tf
 
-from streamlit_metrics import metric, metric_row
+#from streamlit_metrics import metric, metric_row
 import pandas as pd
 import numpy as np
 import seaborn as sns
