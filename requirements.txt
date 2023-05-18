@@ -12,4 +12,5 @@ google-api-python-client
 pip==23.1.2
 streamlit-aggrid
 gdown
+torchvision 
 
