@@ -25,8 +25,10 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
 import pickle
+import gdown
 #sns.set(style="darkgrid", color_codes=True)
 st.set_page_config(layout="wide",)
+
 
 st.title('Predict views :clapper:')
 
@@ -34,9 +36,10 @@ st.header('Views prediction based on youtube video title')
 
 st.write(f""" You can use this to predict how many views you might get depending on the title of your video. The model used is a pretrained model 'distilbert-base-uncased'. Enter your video title and predict how much views you'd get! """)
 
-model = pickle.load(open('releases/model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 with open('pages/tokenizer.pkl', 'rb') as handle:
     tokenizer = pickle.load(handle)
+    
 
 #model = AutoModelForSequenceClassification.from_pretrained("model", use_auth_token=True)
 #tokenizer = AutoTokenizer.from_pretrained("tokenizer")
