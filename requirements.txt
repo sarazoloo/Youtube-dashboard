@@ -9,7 +9,7 @@ datasets
 keras==2.12.0
 tensorflow==2.12.0
 google-api-python-client
-pip==23.1.2
+pip
 streamlit-aggrid
 gdown
 torchvision 
