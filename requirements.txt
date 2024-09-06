@@ -13,4 +13,4 @@ pip==23.1.2
 streamlit-aggrid
 gdown
 torchvision 
-accelerate==0.17.0
+accelerate>=0.21.0
